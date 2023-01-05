@@ -55,7 +55,7 @@ public class DelayQueueExecutorFactory implements ApplicationListener<ContextRef
             log.info("延迟队列「{}」执行器已启动...", queueName);
             while (!Thread.currentThread().isInterrupted()) {
                 try {
-                    DelayMessage delayMessage = executor.task();
+                    DelayMessage delayMessage = executor.take();
                     log.info("获取到队列「{}」到期消息：{}", queueName, delayMessage);
                     if (Objects.nonNull(delayMessage)) {
                         threadPoolExecutor.execute(() -> executor.execute(delayMessage));

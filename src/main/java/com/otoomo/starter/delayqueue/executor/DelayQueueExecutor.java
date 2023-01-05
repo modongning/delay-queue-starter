@@ -33,6 +33,6 @@ public interface DelayQueueExecutor<T extends DelayMessage> {
      * @return
      * @throws InterruptedException
      */
-    T task() throws InterruptedException;
+    T take() throws InterruptedException;
 
 }

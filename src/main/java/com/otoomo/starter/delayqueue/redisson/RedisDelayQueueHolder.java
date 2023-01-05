@@ -114,7 +114,7 @@ public class RedisDelayQueueHolder implements DelayQueueHolder {
      * @return
      */
     @Override
-    public <T> T task(String queueName) throws InterruptedException {
+    public <T> T take(String queueName) throws InterruptedException {
         return (T) getQueue(queueName).take();
     }
 

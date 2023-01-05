@@ -30,7 +30,7 @@ public class PkFinishDelayQueueExecutor implements DelayQueueExecutor<PkFinishDe
     }
 
     @Override
-    public PkFinishDelayMessage task() throws InterruptedException {
-        return redisDelayQueueHolder.task(this.queueName());
+    public PkFinishDelayMessage take() throws InterruptedException {
+        return redisDelayQueueHolder.take(this.queueName());
     }
 }

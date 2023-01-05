@@ -71,5 +71,5 @@ public interface DelayQueueHolder {
      * @return
      * @throws InterruptedException 中断异常
      */
-    <T> T task(String queueName) throws InterruptedException;
+    <T> T take(String queueName) throws InterruptedException;
 }
